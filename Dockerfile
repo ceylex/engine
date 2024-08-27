@@ -1,6 +1,6 @@
-FROM alpine AS build
+FROM golang:1.23.0-alpine AS build
 
-RUN apk add --no-cache go make
+RUN apk add --no-cache make
 
 WORKDIR /app
 
