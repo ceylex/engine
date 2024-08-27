@@ -69,6 +69,6 @@ func main() {
 	 * It's time to start the go/gin Router and make it available
 	 * to our front facing application to make requests.
 	 */
-	Router.Run("127.0.0.1:8888")
+	Router.Run("127.0.0.1:8080")
 
 }
