@@ -1,0 +1,25 @@
+name: ghcr-publish
+on:
+  workflow_dispatch:
+
+jobs:
+
+  ghcr-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Login (ghcr.io)
+        uses: docker/login-action@v1
+        with:
+         registry: ghcr.io
+         username: ${{ github.actor }}
+         password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build
+        run:
+          docker build . --tag ghcr.io/ceylex/engine:latest
+
+      - name: Publish
+        run:
+          docker push ghcr.io/ceylex/engine:latest
