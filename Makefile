@@ -1,4 +1,4 @@
 default: run
 
 run:
-	@go run ceylex.go
+	@go run routes.go ceylex.go
