@@ -23,3 +23,6 @@ jobs:
       - name: Publish
         run:
           docker push ghcr.io/ceylex/engine:latest
+        permissions:
+          contents: read
+          packages: write
